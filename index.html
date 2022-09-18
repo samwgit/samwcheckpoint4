@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>Sammy's Todo's</title>
+</head>
+
+<body class="bgimg" onload="startTime()">
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+      <span class="ms-2 me-2 col-11">Sammy's Todo's</span>
+      <a class="navbar-brand ms-3" href="#">
+      </a>
+    </nav>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="app"></div>
+        </div>
+
+
+
+        <!-- SECTION CLOCK IS HERE NO TOUCHY!!!! -->
+        <div class="card col-1 bg-dark m-3 clock rounded-5">
+          <div id="txt" class="fs-1 text-center text-light"></div>
+          <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+            function checkTime(i) {
+              if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+              return i;
+            }
+          </script>
+        </div>
+
+        <!-- <div class="card col-1 bg-dark m-3 weather text-light text-center">
+          <h3 id="weather convert">Test</h3>
+        </div> -->
+
+
+
+        <div class="row" id="quote">
+          <!-- SECTION Quote Template -->
+
+        </div>
+
+        <div class="row" id="weather"></div>
+
+        <!-- SECTION List -->
+        <div class="row">
+          <div class="ms-3 card bg-dark rounded-5 movetodo" style="width: 30rem;">
+            <div class="card-header text-center text-light fs-3">
+              <span id="fart"></span> Remain
+            </div>
+            <ul class="list-group list-group-flush p-3" id="todos">
+              <li class="list-group-item bg-grey">An item <i class="mdi mdi-delete text-danger"></i></li>
+              <li class="list-group-item bg-grey">A second item</li>
+              <li class="list-group-item bg-grey">A third item</li>
+            </ul>
+            <form onsubmit="app.todoController.addTodo()">
+              <input type="text" name="description">
+              <button class="m-1 btn btn-primary" type="submit">Add Todo</button>
+            </form>
+          </div>
+        </div>
+</body>
+
+
+
+
+<!-- <div onload="app.QuoteService."></div>
+            <div class="col-5">
+              <div class="card" style="width: 350px;">
+                <p>put quote here Lorem ipsum dolor sit amet.</p>
+                <p>author name: me I made this</p>
+              </div>
+            </div> -->
+
+<!-- SECTION Image Author Template -->
+<!-- <div class="col-2">
+              <div class="card" style="width: 150px;">
+                <p>Image Author: Lorem Fartstein</p>
+              </div>
+            </div> -->
+
+
+
+</div>
+</div>
+</div>
+</div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 💖 by CodeWorks</small></p>
+    </div>
+  </footer> -->
+
+<script>
+  function KelvinConverter(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("convert").innerHTML = ((valNum - 273.15) * 1.8) + 32;
+  }
+</script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js'
+  integrity='sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=='
+  crossorigin='anonymous' referrerpolicy='no-referrer'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+  integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+<script src="app/App.js" type="module"></script>
+</body>
+
+</html>

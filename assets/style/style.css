@@ -1,0 +1,23 @@
+/* BASIC STYLES HERE */
+input[type=checkbox]:checked+label {
+  color: rgb(94, 0, 0);
+  text-decoration: line-through;
+}
+
+
+
+
+.bgimg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.movetodo {
+  top: 2em;
+}
+
+.clock {
+  width: 500px;
+}
