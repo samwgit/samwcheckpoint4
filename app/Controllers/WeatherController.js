@@ -12,7 +12,7 @@ function drawWeather() {
 export class WeatherController {
   constructor() {
     this.getWeather()
-    drawWeather()
+    // drawWeather()
   }
 
 

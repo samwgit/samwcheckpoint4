@@ -1,13 +1,14 @@
-import { appState } from "../AppState";
-import { Weather } from "../Models/Weather";
-import { SandboxWeather } from "./AxiosService";
+import { appState } from "../AppState.js";
+import { Weather } from "../Models/Weather.js";
+import { SandboxWeather } from "./AxiosService.js";
 
 class WeatherService {
   async getWeather() {
     const res = await SandboxWeather.get()
     console.log('Getting Weather', res.data);
     appState.weather = new Weather(res.data)
-    console.log('AppState:', appState.quote);
+    console.log(appState.weather);
+    // console.log('AppState:', appState.quote);
   }
 }
 

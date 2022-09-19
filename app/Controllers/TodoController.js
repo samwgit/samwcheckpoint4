@@ -8,8 +8,8 @@ function drawTodos() {
   let template = ''
   appState.todos.forEach(t => template += t.TodoTemplate)
   setHTML('todos', template)
-
-  setText('fart', appState.todos.length)
+  // NOTE How to add the dynamic list counter
+  setText('fart', appState.todos.filter(t => !t.completed).length)
 }
 
 
